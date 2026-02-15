@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  *{
+    overflow-x: hidden;
+  }
+  
+      .header-wrapper{
+    background-color: #f85606;
+    height: 125px;
+}
+.top-header{
+       display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 6px 40px;
+    color: white;
+    font-size: 12px;
+   
+}
+.main{
+       display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 15px 40px;
+}
+.searchbox input{
+    width: 200%;
+    padding: 12px;
+    border: none;
+    margin-left: 150px;
+}
+.cart{
+    margin-left: 500px;
+}
+.image img{
+    height: 74vh;
+   margin-top: 2px;
+}
+ .flashsale
+  {
+      background: #fff;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 30px auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+   .flashsale h2
+    {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+  .flashsale .subheading
+   {
+      color: #ff4d00;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  .products {
+      display: flex;
+      gap: 40px;
+     
+      padding-bottom: 10px;
+    }
+
+    .productcard {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      flex: 0 0 200px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    
+     
+    }
+     
+     .productcard img {
+      width: 100%;
+      height: 180px;
+      border-bottom: 1px solid #eee;
+      
+    }
+
+    .productinfo {
+      padding: 10px;
+    }
+     .productinfo h4 {
+      font-size: 14px;
+      color: #333;
+      margin: 5px 0;
+      height: 40px;
+      overflow: hidden;
+    }
+     .price {
+      color: #ff4d00;
+      font-weight: bold;
+    }
+    .oldprice {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 13px;
+      margin-left: 5px;
+    }
+   .discount {
+      color: #28a745;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .shopbtn {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #ff4d00;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .categoriessection
+     {
+      background: #fff;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+  .categoriessection h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+      .categoriesgrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+    }
+
+    .categorycard {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      text-align: center;
+      padding: 10px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+     .categorycard:hover {
+    
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .categorycard img {
+      width: 100%;
+      height: 100px;
+     
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+   .categorycard p {
+      font-size: 14px;
+      color: #333;
+      font-weight: 500;
+      margin: 0;
+    }
+      .categoriessection {
+        padding: 15px;
+      }
+      .categoriessection h2 {
+        font-size: 20px;
+      }
+      .categorycard img {
+        height: 80px;
+      }
+      .w2{
+        display: flex;
+      }
+
+       footer {
+      background-color: #fff;
+      padding: 40px 60px;
+      }
+    .footer-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1300px;
+      margin: auto;
+    }
+    .footer-col h3 {
+      font-size: 16px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 10px;
+    }
+    .footer-col p {
+      font-size: 14px;
+      color: #555;
+      margin: 6px 0;
+    }
+     .footer-bottom {
+      max-width: 1300px;
+      margin: 40px auto 0;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+  
+      align-items: center;
+    }
+    .footer-bottom-right {
+      font-size: 13px;
+      color: #777;
+    }
+
+    .footer-bottom-left {
+      display: flex;
+       gap: 15px;
+      align-items: center;
+    }
+    .footer-bottom-left a {
+      color: #555;
+      font-size: 13px;
+      transition: color 0.3s;
+    }
+    .footer-bottom-left a:hover {
+      color: #ff4d00;
+    }
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .social-icons a img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .copyright {
+      text-align: center;
+      color: #888;
+      font-size: 13px;
+      margin-top: 20px;
+    }
+     .footer
+       {
+        padding: 25px;
+      }
+     .footer-col h3 
+      {
+        font-size: 15px;
+      }
+      .footer-bottom
+       {
+       align-items: center;
+        gap: 10px;
+        text-align: center;
+      }
+      .div3{
+         font-size: 15px;
+      }
+      .div2 p{
+        font-size: 14px;
+      color: #555;
+      margin: 6px 0;
+      }
+      .div3 p{
+        font-size: 14px;
+      color: #555;
+      margin: 6px 0;
+      }
+      .abc{
+         background-color: #f8f8f8;
+        padding: 40px 80px;
+        color: #333;
+      }
+   .aaa{
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 30px;
+   }
+    .section{
+       flex: 1 1 200px;
+       margin: 10px;
+    } 
+    .section h4{
+        font-size: 16px;
+       color: #ff6a00;
+       margin-bottom: 10px;
+    }
+
+  .section 
+  {
+    margin-bottom: 20px;
+  }
+  .section5{
+     
+     display: flex;
+     margin-right: 30px;
+     margin-top: 60px;
+  }
+  .bold-text{
+  font-weight: 600;
+}
+.productcard:hover{
+  background: rgb(217, 215, 215);
+  transform: scale(1.1);
+}
+.categorycard:hover{
+   background: rgb(217, 215, 215);
+  transform: scale(1.1);
+}
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+
+  /* Header */
+  .top-header{
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 10px;
+    gap: 8px;
+    padding: 5px;
+  }
+
+  .main{
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .searchbox input{
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .cart{
+    margin-left: 0;
+  }
+
+  /* Banner Image */
+  .image img{
+    width: 100%;
+    height: auto;
+  }
+
+  /* Flash Sale */
+  .products{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .productcard{
+    width: 45%;
+  }
+
+  /* Categories */
+  .categoriesgrid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .categorycard img{
+    height: 90px;
+  }
+
+  /* Footer Sections */
+  .aaa{
+    flex-direction: column;
+  }
+
+  .section5{
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .footer-columns{
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom{
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  /* Remove Hover Zoom On Mobile */
+  .productcard:hover,
+  .categorycard:hover{
+    transform: none;
+  }
+
+}
+
+
+</style>
+<body>
+  
+   <div class="header-wrapper">
+    <div class="top-header">
+       <div class="y" style="margin-right: 40px;">SAVE MORE ON APP</div>
+       <div class="y1" style="margin-right: 40px;">SELL ON DARAZ</div> 
+        <div class="y2" style="margin-right: 40px;">HELP & SUPPORT</div>
+        <div class="y3" style="margin-right: 40px;">LOGIN</div>
+        <div class="y4" style="margin-right: 30px;">SIGN UP</div>
+        زبان تبدیل کریں
+    </div>
+    <div class="main">
+        <div class="logo"><img src="./darazlogo11.png" height="50px" width="100px" alt=""></div>
+        <div class="searchbox" >
+          <input type="text" placeholder="Search in daraz"> 
+          
+        </div>
+        <div class="cart"><img src="./cart.png" height="30px" width="30px" alt=""></div>
+    </div>
+    </div>
+    <div class="image">
+        <img src="./daraz.avif" alt="">
+    </div>
+       <div class="flashsale">
+  <h2>Flash Sale</h2>
+  <div class="subheading">On Sale Now</div>
+
+  <div class="products">
+
+    <div class="productcard">
+      <img src="./samsung.avif" alt="">
+      <div class="productinfo">
+        <h4>Samsung Galaxy A56 8/256GB</h4>
+        <div>
+          <span class="price">Rs.115,898</span>
+          <span class="oldprice">Rs.137,999</span>
+        </div>
+        <div class="discount">-16%</div>
+      </div>
+    </div>
+
+    <div class="productcard">
+      <img src="./airpords.avif" alt="">
+      <div class="productinfo">
+        <h4>Airpod Pro Air TWS Wireless Earbuds</h4>
+        <div>
+          <span class="price">Rs.737</span>
+          <span class="oldprice">Rs.1,999</span>
+        </div>
+        <div class="discount">-63%</div>
+      </div>
+    </div>
+
+    <div class="productcard">
+      <img src="./samsung galaxy.avif" alt="">
+      <div class="productinfo">
+        <h4>Samsung Galaxy A56 8/256GB</h4>
+        <div>
+          <span class="price">Rs.115,898</span>
+          <span class="oldprice">Rs.137,999</span>
+        </div>
+        <div class="discount">-16%</div>
+      </div>
+    </div>
+
+    <div class="productcard">
+      <img src="./dalda.avif" alt="">
+      <div class="productinfo">
+        <h4>Dalda VTF Banaspati Ghee</h4>
+        <div>
+          <span class="price">Rs.2,940</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="productcard">
+      <img src="./kitchen cleaner.avif" alt="">
+      <div class="productinfo">
+        <h4>Kitchen Cleaner - Degreaser</h4>
+        <div>
+          <span class="price">Rs.290</span>
+        </div>
+      </div>
+    </div>
+
+  </div> 
+
+ 
+</div> 
+
+       <div class="categoriessection">
+    <h2>Categories</h2>
+    <div class="categoriesgrid">
+     
+      <div class="categorycard">
+        <img src="./anklets.avif" alt="Anklets">
+        <p>Anklets</p>
+      </div>
+         <div class="categorycard">
+        <img src="./3d printers.avif" alt="3D Printers">
+        <p>3D Printers</p>
+      </div>
+
+      <div class="categorycard">
+        <img src="./pasta.avif" alt="Pizza Tools">
+        <p>Pasta, Noodle & Pizza Tools</p>
+      </div>
+       <div class="categorycard">
+        <img src="./sim tools.avif" alt="SIM Tools">
+        <p>SIM Tools</p>
+      </div>
+
+      <div class="categorycard">
+        <img src="./screen protectors.avif" alt="Screen Protectors">
+        <p>Screen Protectors</p>
+      </div>
+
+      <div class="categorycard">
+        <img src="./casserole pots.avif" alt="Casserole Pots">
+        <p>Casserole Pots</p>
+      </div>
+
+      <div class="categorycard">
+        <img src="./hoodie & Sweatshirts.avif" alt="Hoodies">
+        <p>Hoodies & Sweatshirts</p>
+      </div>
+      <div class="categorycard">
+        <img src="./toybox.avif" alt="Toy Boxes">
+        <p>Toy Boxes & Organisers</p>
+      </div>
+
+      <div class="categorycard">
+        <img src="./dog.avif" alt="Dog Clippers">
+        <p>Dog & Cat Electric Clippers</p>
+      </div>
+
+      <div class="categorycard">
+        <img src="./microphones.avif" alt="Microphones">
+        <p>Microphones</p>
+      </div>
+
+      <div class="categorycard">
+        <img src="./bedsheets.avif" alt="Bed Sheets">
+        <p>Bed Sheets</p>
+      </div>
+     <div class="categorycard">
+        <img src="./scooters.avif" alt="Scooters">
+        <p>Scooters</p>
+      </div>
+         <div class="categorycard">
+        <img src="./table lamp.avif" alt="Scooters">
+        <p>Table lamp</p>
+      </div>
+       <div class="categorycard">
+        <img src="./dinig set.avif" alt="Scooters">
+        <p>Dining set</p>
+      </div>
+       <div class="categorycard">
+        <img src="./leashes.avif" alt="Scooters">
+        <p>Leashes</p>
+      </div>
+       <div class="categorycard">
+        <img src="./samsung.avif" alt="Scooters">
+        <p>samsung</p>
+      </div>
+       <div class="categorycard">
+        <img src="./education.avif" alt="Scooters">
+        <p>Education</p>
+      </div>
+       <div class="categorycard">
+        <img src="./scooters.avif" alt="Scooters">
+        <p>Scooters</p>
+      </div>
+    </div>
+  </div>
+   <div class="abc">
+    <div class="aaa">
+      <div class="section">
+        <h4>Customer Care</h4>
+        Help Center <br>
+        How to Buy <br>
+        Corporate & Bulk Purchasing <br>
+        Returns & Refunds <br>
+        Daraz Shop <br>
+        Contact Us <br>
+        Purchase Protection <br>
+        Daraz Pick up Points
+      </div>
+      <div class="section">
+        <h4>Daraz</h4>
+        About Us <br>
+        Digital Payments <br>
+        Daraz Donates <br>
+        Daraz Blog <br>
+        Terms & Conditions <br>
+        Privacy Policy <br>
+        Online Shopping App <br>
+        Daraz Exclusive <br>
+        Daraz University <br>
+        Sell on Daraz
+      </div>
+      <div class="section5">
+        <div class="shopping">
+        <h4><img src="./daraz icon.png" style="height: 20px; width: 20px;" alt="">Happy Shopping</h4>
+        </div>
+        <div class="shopping2">
+          <img src="./available.jfif" style="height: 60px; width: 90px;" alt="">
+          <img src="./gallery.png" style="height: 50px; width: 100px;" alt="">
+        </div>
+        </div>
+    </div>
+   </div>
+  <footer>
+    <div class="footer-columns">
+
+      <div class="footer-col">
+        <h3>How Daraz Transformed Online Shopping in Pakistan</h3>
+        <p>How Daraz Transformed Online Shopping in Pakistan
+
+Daraz first made waves in Pakistans e-commerce market after its introduction in 2012. We have since grown to become Pakistas largest platform for online shopping with a network spread across Asia in Pakistan, Bangladesh, Sri Lanka, Myanmar, and Daraz.com.np. Our vision was to provide a safe, efficient online marketplace platform for vendors and customers across the country to come together. We started off exclusively as an online fashion retail platform and over the years expanded to become a complete one-stop solution for all your buying needs. Daraz prides itself on not being just another ecommerce venture in Asia. We work tirelessly to make sure that we provide users with the best online online shopping experience and value for their purchases. Whether you shop online through our website or our online shopping mobile App, you can expect easy navigation, customized recommendations, and a smooth online shopping experience guaranteed.</p>
+        <h3>What Makes Us Different</h3>
+        <p>Select from the Largest Online Marketplace in Pakistan
+With over 15 million products to select from, Daraz offers its customers the most comprehensive listing of products in the country. Whether youre looking for electronics, apparel, appliances, or groceries – there is something for everyone.
+
+Hassle Free Delivery
+Online shopping is only as good as its execution and Daraz promises hassle free delivery right from the moment you order to when your package is dropped at your door. We cater to both major and smaller cities alike, and give you the choice to track your package as it makes its way to you so you always know your order status. If you are unsatisfied with any aspect of your order, we have a simple 7-day return or exchange policy.
+
+Payment Options to Suit Every Style
+You can choose to pay through a credit/debit card, opt for cash on delivery or even go for EMI (easy monthly instalments). You can also</p>
+
+      </div>
+    <div class="div2">
+      <p>avail exclusive offers by downloading Daraz Wallet  a closed loop digital wallet that offers you a secure, easy way to make payments. We also have easypaisa & jazzcash payment method for our customers' ease <br>
+ <span class="bold-text">Shop from Verified Vendors</span>
+Daraz understands that online shopping in Pakistan comes with its fair share of risks. This is why with Daraz Marketplace and Daraz Mall customers have the security of choosing from verified vendors and brands from Karachi, Lahore, Islamabad and all across Pakistan. Now youll never have to second guess authenticity because Daraz makes sure to do it for you! <br>
+Shop Around the World with Daraz Global Collection
+International sellers and local convenience come together with Daraz Global collection. Get the chance to shop online from vendors around the world without leaving the Daraz website. Featuring thousands of novelty gadgets and accessories, Daraz Global Collection offers you a selection of products that you wont find anywhere else when youre online shopping in Pakistan  <br>Avail Exclusive Discounts, Offers, and Promotions <br>
+Online shopping with Daraz means you get the chance to avail exclusive online-only promotional packages as well as discount vouchers from our vendors when you shop from their pages. Our flash sales give you customized product offers all curated with the help of our advanced AI technology so you always have deals youll actually be interested in!
+ <span class="bold-text">Buy Value, not Just Goods with Daraz Care </span>
+Daraz does not just cater online shopping in Pakistan but also aims to simplify the way you give back to society. With charities spanning across sectors of education, health care, environmental preservation, and shelters, you can choose to make a big difference with a few, simple clicks.
+<span class="bold-text"><br>Simplify Corporate Purchases <br></span>
+Who says corporate purchases need to be a complicated affair? When you opt for Daraz Corporate, you get an efficient and transparent solution for your business bulk purchasing needs. Were proud to be working with some of the most prestigious organizations in Pakistan across a number of different industries.</p>
+    </div>
+      <div class="footer-col">
+        <h3>Top Categories & Brands</h3>
+        <p>MOBILE PHONES IN PAKISTAN
+Apple iPhones , Honor Mobiles , Huawei Mobiles , Tecno Mobiles , Redmi Mobiles , Xiaomi Mi Mobiles , Nokia Mobiles , OnePlus Mobiles , Oppo Mobile Phones , Realme Mobiles , Samsung Mobile Phones , Vivo Mobile Phones , Mobile Accessories , Smart Watches
+ <span class="bold-text"> <br>LATEST LAPTOPS <br></span>
+Dell Laptops , HP Laptops , Lenovo Laptops , Mouse , Gaming Graphic Cards , lenovo ideapad 3 , Macbook Pro 13 , Hp Probook 650 G2
+<span class="bold-text"><br>LED TV <br></span>
+Changhong Led Tv , LG Led Tv , Samsung Led Tv , Sony Led Tv , TCL LED TVs
+<span class="bold-text"><br>HOME APPLIANCES <br></span>
+Microwave oven , Geyser , Heater , Refrigerators , Deep Freezers , Generators , Water Dispensers , Fans , Room Cooler , Table Fans , Wall Fans , Exhaust Fans , Pedestal Fans , Window Ac , Solar Panel , Washing Machine
+<span class="bold-text"><br>DSLR CAMERAS <br></span>
+Camera Tripods , Drones , IP & CCTV Cameras , Nikon D7000 , Nikon D5600 , Canon 200D , Canon 1200D , Fujifilm Instax Mini 11 , Canon M50
+<span class="bold-text"><br>HEALTH & BEAUTY <br></span>
+sunisa foundation , Biofad , janssen facial kit , Glutathione Injection , Glutathione Cream , Sauvage , Glutathione Tablets , Glutathione Soap , Infrared Thermometers , N95 Mask
+TRENDING
+Online Bills , Core I5 Laptop , Gtx 1060 , Samsung A32 , Samsung A51 , Samsung A52 , Samsung A71 , Samsung A72 , Samsung M31 , Samsung S20 , Samsung S20 Ultra 5G , Samsung S21 , Samsung S21 Ultra , Samsung Z Flip , Tecno Camon 17 , Tecno Spark 6 , Vivo V20 , Poco X3 Pro , Vivo V21 , Vivo V21E , Vivo X70 Pro , Vivo Y12 , Vivo Y12S , Vivo Y1S , Vivo Y20 , Vivo Y51 , Vivo Y51S , Oppo F19 Pro , Oppo Reno 6 , Xiaomi Poco F3 , Xiaomi Poco M3 , Xiaomi Poco X3 , Xiaomi Poco X3 Gt , Xiaomi Redmi 9C , Xiaomi Redmi Note 10 Pro , Sharp Aquos R2</p>        
+      </div>
+     <div class="div3">
+      <p>WOMEN'S FASHION
+Al-Karam Studio , Warda , Salitex , Bonanza Satrangi , Edenrobe , Firdous , Junaid Jamshed , Limelight , Sana Safinaz , Mahru , Pushup Bra , Women Undergarments
+<span class="bold-text"><br>MEN'S FASHION <br></span>
+Men's Shirts , Men's T-Shirts
+<span class="bold-text"><br>ONLINE GROCERY STORE <br></span>
+Oil & Ghee , Basmati Rice , Dried Fruits , Chocolates , Mattresses
+<span class="bold-text"><br>ONLINE BOOK STORE <br></span>
+English Books , Islamic Books , History Books , English Literature Books , Kids Urdu Stories , Pride & Prejudice , Harry Potter Story Books , Namal Novel , Nimra Ahmed Novels
+<span class="bold-text"><br>AIR CONDITIONERS  <br></span>
+Kenwood Ac , Haier Ac , Gree Ac , Dawlance Ac , Orient Ac , Ecostar Ac , Inverex Solar Ac , Pel Ac
+<span class="bold-text"><br> TOP MOBILE PHONES<br></span>
+Nokia G20 , redmi 9 , realme 7 pro , realme c15 , realme c21 , vivo y20s , realme c11 Price in Pakistan , itel vision 1 pro price in pakistan , samsung galaxy a02 price in pakistan , Infinix Hot 10 , Infinix Hot 8 , Infinix Hot 9 , Infinix Note 10 Pro , Infinix Note 7 , Infinix Note 8 , Infinix Zero 8 , Inifnix Smart 5 , iPhone 11 , iPhone 12 , iphone 12 Pro Max , iPhone 12 Pro , iPhone 6 , Itel A25 , Mi 10T , Nokia 105 , Oppo A15 , Oppo A15S , Oppo A53 , Oppo A54 , Infinix Zero X Pro , Infinix Zero X Neo , Oppo F19 , Oppo Reno 5 , Oppo Reno 5 Pro , Xiaomi Poco M3 Pro , Realme 6 Pro , Realme 8 , Realme Narzo 30A , Samsung A02S , Samsung A11 , Samsung A12 , Samsung A31 , Vivo Y33s , Infinix Note 11 , Tecno Spark 6 Go , Samsung A52s , Samsung Tab A7 Lite
+<span class="bold-text"><br>SHOP WORLDWIDE WITH LAZADA <br></span>
+Singapore , Malaysia , Philippines , Indonesia , Vietnam , Thailand
+SHOP WORLDWIDE WITH MIRAVIA
+Spain , Portuga</p>
+     </div>
+       </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <strong>Daraz International</strong> |
+      Pakistan |
+        Bangladesh |
+        Nepal |
+        Sri Lank |
+       Myanmar
+      </div>
+
+      <div class="footer-bottom-right">
+        <strong>Follow Us:</strong>
+        <div class="social-icons">
+         <img src="./facebook.png" height="30px" width="30px" alt="Facebook"></a>
+         <img src="./instagram.png" height="30px" width="30px" alt="Instagram"></a>
+          <img src="./tewitter.png" height="30px" width="30px" alt="Twitter"></a>
+          <img src="./youtube.png" height="30px" width="30px" alt="YouTube"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+       Daraz 2026 | All Rights Reserved
+    </div>
+  </footer>
+
+    
+</body>
+</html>
